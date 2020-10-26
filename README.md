@@ -1,5 +1,5 @@
 # Logging
-==========
+
 A simple python library to log your Machine Learning experiments.
 
 ## Prerequisites
@@ -45,3 +45,5 @@ model_logger.save()
 ```
 
 ## Why to Use
+
+Stores data in a pandas compatible csv file. Pandas enables you to view and vizualise model results and experiments easily.
