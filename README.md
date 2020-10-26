@@ -25,22 +25,27 @@ model_logger = Logger(df_path = data_path, create = False)
   model_dir = "Path.to.model"
   epoch_logger = Logger(df_path = os.path.join(data_path, model_dir, "epochs.csv"), create = False)
   batch_logger = Logger(df_path = os.path.join(data_path, model_dir,"batches,csv"), create = False)
+
 #  #Epoch Loop
+
 #     #Minibatch Loop
           batch_logger.log("batch_train_loss", batch_loss)
           batch_logger.log("batch_accuracy", batch_accuracy)
           batch_logger.log("batch_val_loss", batch_val_loss)
           batch_logger.log("batch_val_accuracy", batch_val_accuracy)
           batch_logger.next()
+
       epoch_logger.log("train_loss", loss)
       epoch_logger.log("accuracy", accuracy)
       epoch_logger.log("val_loss", val_loss)
       epoch_logger.log("val_accuracy", val_accuracy)
       epoch_logger.next()
+
   model_logger.log('key', value)
   batch_logger.save()
   epoch_logger.save()
   model_logger.next()
+
 model_logger.save()
 ```
 
