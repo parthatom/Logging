@@ -21,7 +21,7 @@ class Logger():
     else:
       self.verbose = False
     self.df_path = df_path
-    if (create):
+    if (create or (not os.path.exists(self.df_path))):
       self.df = pd.DataFrame(columns = ['val_accuracy'])
     else:
       self.df = pd.read_csv(self.df_path, index_col=False)
