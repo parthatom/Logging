@@ -32,6 +32,8 @@ class Logger():
     """
     Logs the `value` for the corresponding `key`
     """
+    if (self.verbose):
+      print(f"{key}\t-- {value}")
     self.write_df(key, value, self.ind)
 
   def write_df(self, key, value, ind):
