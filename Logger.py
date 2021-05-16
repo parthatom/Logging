@@ -41,6 +41,8 @@ class Logger():
   def write_df(self, key, value, ind):
     if isinstance(value, torch.Tensor):
         value = value.detach().cpu().item()
+    elif isinstance(value, bool ):
+        value = float (value)
 
     if not key in self.df:
       if (self.verbose):
